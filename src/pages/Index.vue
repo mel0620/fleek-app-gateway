@@ -1,28 +1,26 @@
 <template>
-  <div class="app-gateway" :style="`--background: url('${bg_image}')`">
-    <q-page-container>
-      <q-page>
-        <div class="app-gateway__content">
-          <FrequentlyUsedApps></FrequentlyUsedApps>
-          <TopFiveApps></TopFiveApps>
-        </div>
-        <q-page-sticky expand position="top" style="z-index: 10">
-          <div class="swiper-container categories-tab">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide" v-for="(cat, i) in categories" :key="i">
-                <div class="categories-tab__item">
-                  <div class="categories-tab__item-icon">
-                    <img width="22" :src="cat.icon" alt="" />
-                  </div>
-                  <div class="categories-tab__item-name">{{ cat.name }}</div>
-                </div>
+  <!-- <q-page class="app-gateway" :style="`--background: url('${bg_image}')`"> -->
+  <q-page class="app-gateway">
+    <div class="app-gateway__content">
+      <FrequentlyUsedApps></FrequentlyUsedApps>
+      <TopFiveApps></TopFiveApps>
+      <!-- <lorem></lorem> -->
+    </div>
+    <q-page-sticky expand position="top" style="z-index: 10">
+      <div class="swiper-container categories-tab">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="(cat, i) in categories" :key="i">
+            <div class="categories-tab__item">
+              <div class="categories-tab__item-icon">
+                <img width="22" :src="cat.icon" alt="" />
               </div>
+              <div class="categories-tab__item-name">{{ cat.name }}</div>
             </div>
           </div>
-        </q-page-sticky>
-      </q-page>
-    </q-page-container>
-  </div>
+        </div>
+      </div>
+    </q-page-sticky>
+  </q-page>
 </template>
 
 <script>
@@ -35,6 +33,7 @@ import TopFiveApps from "../components/TopFiveApps";
 export default {
   name: "PageIndex",
   components: {
+    Lorem,
     FrequentlyUsedApps,
     TopFiveApps
   },
@@ -80,22 +79,11 @@ export default {
   font-size: 12px;
   letter-spacing: 1px;
 }
+
 .app-gateway {
   position: relative;
-  min-height: 100vh;
   --background: #fff;
-  background-color: #111010;
-
-  &::before {
-    content: " ";
-    background: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.4));
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
+  background-color: #202124;
 
   &::after {
     content: " ";
@@ -113,8 +101,9 @@ export default {
 
   .swiper-container {
     width: 100%;
-    margin-top: 1rem;
+    padding-top: 1rem;
     border-bottom: 1px solid rgba(#fff, 0.1);
+    background-color: #202124;
 
     .swiper-wrapper {
       .swiper-slide {

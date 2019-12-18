@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal style="background-color: transparent">
+    <q-header reveal style="background-color: #202124">
       <q-toolbar class="column">
         <button class="app-back">
           <q-icon
@@ -16,8 +16,9 @@
         </div>
       </q-toolbar>
     </q-header>
-
-    <router-view />
+    <q-page-container class="app-gateway-container">
+      <router-view />
+    </q-page-container>
   </q-layout>
 </template>
 
@@ -26,9 +27,7 @@ export default {
   name: "MyLayout",
 
   data() {
-    return {
-      leftDrawerOpen: false
-    };
+    return {};
   }
 };
 </script>
@@ -45,7 +44,7 @@ export default {
 
   &__label {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 0.5rem;
   }
 }
@@ -64,13 +63,30 @@ export default {
   }
 
   input {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     border: 0;
     min-width: 300px;
-    padding: 4px 16px 4px 30px;
+    padding: 8px 16px 8px 30px;
     outline: none;
     color: white;
+    font-size: 0.75rem;
   }
+}
+
+.app-gateway-container {
+  position: relative;
+  //   background-color: #111010;
+
+  //   &::before {
+  //     content: " ";
+  //     background: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.4));
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     z-index: 2;
+  //   }
 }
 </style>
