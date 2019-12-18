@@ -3,10 +3,11 @@
     <q-page-container>
       <q-page>
         <div class="app-gateway__content">
-          <!-- <lorem></lorem> -->
+          <FrequentlyUsedApps></FrequentlyUsedApps>
+          <TopFiveApps></TopFiveApps>
         </div>
         <q-page-sticky expand position="top" style="z-index: 10">
-          <div class="categories-tab">
+          <div class="swiper-container categories-tab">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(cat, i) in categories" :key="i">
                 <div class="categories-tab__item">
@@ -28,16 +29,19 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 import Lorem from "../components/Lorem";
+import FrequentlyUsedApps from "../components/FrequentlyUsedApps";
+import TopFiveApps from "../components/TopFiveApps";
 
 export default {
   name: "PageIndex",
   components: {
-    Lorem
+    FrequentlyUsedApps,
+    TopFiveApps
   },
   data() {
     return {
       categories_tab: "mail",
-      bg_image: "statics/get-started.jpg",
+      bg_image: "../statics/get-started.jpg",
       categories: [
         {
           icon: "statics/cat-travel.svg",
@@ -63,7 +67,7 @@ export default {
     };
   },
   mounted() {
-    var mySwiper = new Swiper(".categories-tab", {
+    var mySwiper = new Swiper(".swiper-container", {
       slidesPerView: 5
     });
   }
@@ -71,6 +75,11 @@ export default {
 </script>
 
 <style lang="scss">
+.section-title {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 .app-gateway {
   position: relative;
   min-height: 100vh;
@@ -102,24 +111,24 @@ export default {
     filter: blur(8px);
   }
 
-  .categories-tab {
+  .swiper-container {
+    width: 100%;
     margin-top: 1rem;
     border-bottom: 1px solid rgba(#fff, 0.1);
 
     .swiper-wrapper {
-      padding: 0 12px 8px;
-
       .swiper-slide {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-bottom: 8px;
       }
     }
 
-    &__item {
+    .categories-tab__item {
       text-align: center;
 
-      &-icon {
+      .categories-tab__item-icon {
         background-color: #f59b20;
         border-radius: 100%;
         width: 45px;
@@ -134,7 +143,7 @@ export default {
         }
       }
 
-      &-name {
+      .categories-tab__item-name {
         text-transform: capitalize;
         color: #fff;
         font-size: 0.75rem;
@@ -146,7 +155,9 @@ export default {
   }
 
   &__content {
-    padding-top: 60px;
+    padding-top: 110px;
+    padding-left: 14px;
+    padding-right: 14px;
     position: relative;
     z-index: 3;
   }

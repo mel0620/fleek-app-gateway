@@ -45,6 +45,7 @@ export default {
 
   &__label {
     color: white;
+    font-size: 12px;
     margin-left: 0.5rem;
   }
 }

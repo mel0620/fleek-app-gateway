@@ -1,6 +1,6 @@
 <template>
-  <div class="frequently-used-apps">
-    <div class="section-title">FREQUENTLY USED APPS</div>
+  <div class="top-five-apps">
+    <div class="section-title">TOP 5 APPS</div>
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(app, i) in apps" :key="i">
         <div class="app-icon">
@@ -21,16 +21,16 @@ export default {
     return {
       apps: [
         {
-          icon: "statics/fb.svg",
-          name: "facebook"
+          icon: "statics/tripadvisor.svg",
+          name: "tripadvisor"
         },
         {
-          icon: "statics/messenger.svg",
-          name: "messenger"
+          icon: "statics/expedia.svg",
+          name: "expedia"
         },
         {
-          icon: "statics/tiktok.svg",
-          name: "tiktok"
+          icon: "statics/pinterest.svg",
+          name: "pinterest"
         },
         {
           icon: "statics/grab.svg",
@@ -39,17 +39,13 @@ export default {
         {
           icon: "statics/spotify.svg",
           name: "spotify"
-        },
-        {
-          icon: "statics/ig.svg",
-          name: "instagram"
         }
       ]
     };
   },
   mounted() {
-    var mySwiper = new Swiper(".frequently-used-apps", {
-      slidesPerView: 6,
+    var mySwiper = new Swiper(".top-five-apps", {
+      slidesPerView: 5,
       spaceBetween: 15
     });
   }
@@ -57,7 +53,8 @@ export default {
 </script>
 
 <style lang="scss">
-.frequently-used-apps {
+.top-five-apps {
+  margin-top: 1rem;
   .swiper-wrapper {
     .swiper-slide {
       .app-icon {
