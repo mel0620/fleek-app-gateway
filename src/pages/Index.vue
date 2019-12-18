@@ -4,6 +4,7 @@
     <div class="app-gateway__content">
       <FrequentlyUsedApps></FrequentlyUsedApps>
       <TopFiveApps></TopFiveApps>
+      <TravelDestinations></TravelDestinations>
       <!-- <lorem></lorem> -->
     </div>
     <q-page-sticky expand position="top" style="z-index: 10">
@@ -29,13 +30,15 @@ import "swiper/css/swiper.min.css";
 import Lorem from "../components/Lorem";
 import FrequentlyUsedApps from "../components/FrequentlyUsedApps";
 import TopFiveApps from "../components/TopFiveApps";
+import TravelDestinations from "../components/TravelDestinations";
 
 export default {
   name: "PageIndex",
   components: {
     Lorem,
     FrequentlyUsedApps,
-    TopFiveApps
+    TopFiveApps,
+    TravelDestinations
   },
   data() {
     return {
@@ -145,8 +148,6 @@ export default {
 
   &__content {
     padding-top: 110px;
-    padding-left: 14px;
-    padding-right: 14px;
     position: relative;
     z-index: 3;
   }

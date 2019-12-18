@@ -16,7 +16,7 @@ import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 
 export default {
-  name: "Frequently Used Apps",
+  name: "frequently-used-apps",
   data() {
     return {
       apps: [
@@ -58,6 +58,7 @@ export default {
 
 <style lang="scss">
 .frequently-used-apps {
+  padding: 0 14px;
   .swiper-wrapper {
     .swiper-slide {
       .app-icon {

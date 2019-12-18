@@ -60,7 +60,10 @@ module.exports = function (ctx) {
         'QPageSticky',
         'QTabs',
         'QTab',
-        'QRouteTab'
+        'QRouteTab',
+        'QDialog',
+        'QCard',
+        'QCardSection'
       ],
 
       directives: [
