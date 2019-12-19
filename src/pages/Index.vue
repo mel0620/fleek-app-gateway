@@ -4,10 +4,12 @@
     <div class="app-gateway__content">
       <FrequentlyUsedApps></FrequentlyUsedApps>
       <TopFiveApps></TopFiveApps>
-      <TravelDestinations></TravelDestinations>
-      <!-- <Shop></Shop> -->
-      <!-- <Games></Games> -->
-      <!-- <Music></Music> -->
+      <TravelDestinations
+        v-if="categories_tab == 'travel'"
+      ></TravelDestinations>
+      <Shop v-if="categories_tab == 'shop'"></Shop>
+      <Games v-if="categories_tab == 'games'"></Games>
+      <Music v-if="categories_tab == 'music'"></Music>
     </div>
     <q-page-sticky expand position="top" style="z-index: 10">
       <div
@@ -21,10 +23,11 @@
       >
         <div class="swiper-wrapper">
           <div
-            class="swiper-slide tab-active"
+            class="swiper-slide"
+            :class="categories_tab == cat.name ? 'tab-active' : ''"
             v-for="(cat, i) in categories"
             :key="i"
-            @click="toggleCategories(i, cat)"
+            @click="categories_tab = cat.name"
           >
             <div class="categories-tab__item">
               <div class="categories-tab__item-icon">
@@ -107,7 +110,7 @@ export default {
       slidesPerView: 5
     });
     this.scrolled();
-    this.toggleCategories();
+    //this.toggleCategories();
   }
 };
 </script>
@@ -152,9 +155,6 @@ export default {
         justify-content: center;
         padding-bottom: 8px;
       }
-      .tab-active {
-        border-bottom: 1px solid $storya;
-      }
     }
 
     .categories-tab__item {
@@ -183,6 +183,14 @@ export default {
         width: 45px;
         margin-top: 4px;
       }
+    }
+  }
+
+  .tab-active {
+    border-bottom: 1px solid $storya;
+
+    .categories-tab__item-name {
+      color: $storya !important;
     }
   }
 
