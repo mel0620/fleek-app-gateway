@@ -101,6 +101,7 @@ export default {
 .app-gateway {
   position: relative;
   --background: #fff;
+  overflow: hidden;
   // background-color: #202124;
 
   &::after {

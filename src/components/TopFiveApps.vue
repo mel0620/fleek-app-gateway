@@ -88,8 +88,8 @@ export default {
           add: "https://media.graytvinc.com/images/810*450/KFC30.jpg"
         },
         {
-          icon: "statics/apps/spotify.svg",
-          name: "spotify",
+          icon: "statics/apps/whatsapp.svg",
+          name: "whatsapp",
           add:
             "https://cdn.rttnews.com/articleimages/ustopstories/2019/november/popeyeschickensandwich-nov04-lt.jpg"
         }
