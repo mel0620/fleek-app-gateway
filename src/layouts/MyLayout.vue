@@ -11,14 +11,14 @@
       "
     >
       <q-toolbar class="column">
-        <button class="app-back">
+        <!-- <button class="app-back">
           <q-icon
             size="20px"
             color="white"
             name="mdi-keyboard-backspace"
           ></q-icon>
           <div class="app-back__label">Back</div>
-        </button>
+        </button> -->
         <div class="app-gateway-search">
           <q-icon size="20px" name="search"></q-icon>
           <input type="text" placeholder="Search" />
@@ -72,7 +72,7 @@ export default {
 .app-gateway-search {
   position: relative;
   display: block;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 
   .q-icon {
     position: absolute;

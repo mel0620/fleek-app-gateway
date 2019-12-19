@@ -4,10 +4,11 @@
       <div class="section-title">TRAVEL DESTINATIONS</div>
       <div class="swiper-wrapper">
         <div
-          class="swiper-slide tab-active"
+          class="swiper-slide"
+          :class="dest.active ? 'tab-active' : ''"
           v-for="(dest, i) in destinations"
           :key="i"
-          @click="tab_active = dest.name"
+          @click="selectActive(i)"
         >
           <div class="travel-destination__item">
             <div class="travel-destination__item-icon">
@@ -20,23 +21,21 @@
     </div>
     <div class="destinations-panel">
       <div class="destinations-wrapper">
-        <div class="destination-item">
+        <div
+          class="destination-item"
+          v-for="(dest, index) in filterdDestinations"
+          :key="index"
+        >
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="statics/destinations/hotel-1.jpg" alt="" />
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-                rerum.
-              </div>
-              <div class="website">metrodeal.com</div>
-            </div>
-            <div class="swiper-slide">
-              <img src="statics/destinations/hotel-2.jpg" alt="" />
-              <div class="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-                rerum.
-              </div>
-              <div class="website">metrodeal.com</div>
+            <div
+              class="swiper-slide"
+              v-for="(item, ind) in dest.lists"
+              :key="ind"
+              @click="openWebsite(item.website)"
+            >
+              <img :src="item.image" alt="" />
+              <div class="desc">{{ item.desc }}</div>
+              <div class="website">{{ item.website }}</div>
             </div>
           </div>
         </div>
@@ -50,97 +49,104 @@ import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 
 export default {
+  props: {
+    name: String
+  },
   data() {
     return {
-      tab_active: "all",
       destinations: [
         {
           icon: "statics/destinations/all.jpg",
           name: "all",
+          active: true,
           lists: [
             {
-              image: "statics/destinations/hotel-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              image: "statics/destinations/resort-1.jpg",
+              desc:
+                "Go on an Exciting Adventure with a Day Tour Beach Access in Camayan Beach Resort, Subic",
+              website: "https://www.metrodeal.com/"
             },
             {
-              image: "statics/destinations/hotel-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
-            },
-            {
-              image: "statics/destinations/hotel-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
-            },
-            {
-              image: "statics/destinations/hotel-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              image: "statics/destinations/resort-2.jpg",
+              desc:
+                "2- or 4-Hour Samba Thrilla Pass with Beach Access in Samba Bluewater Resort, Olongapo City",
+              website: "https://www.metrodeal.com/"
             }
           ]
         },
         {
           icon: "statics/destinations/hotel.jpg",
           name: "hotels",
+          active: false,
           lists: [
             {
               image: "statics/destinations/hotel-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Luxurious Accommodation with Breakfast Buffet, Transfers & More in Marco Polo Plaza Cebu",
+              website: "https://www.metrodeal.com/"
             },
             {
               image: "statics/destinations/hotel-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Accommodation with Breakfast Buffet & Massage for 2 Persons in Red Hotel Cubao, Quezon City",
+              website: "https://www.metrodeal.com/"
             }
           ]
         },
         {
           icon: "statics/destinations/resort.jpg",
           name: "resorts",
+          active: false,
           lists: [
             {
               image: "statics/destinations/resort-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Go on an Exciting Adventure with a Day Tour Beach Access in Camayan Beach Resort, Subic",
+              website: "https://www.metrodeal.com/"
             },
             {
               image: "statics/destinations/resort-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "2- or 4-Hour Samba Thrilla Pass with Beach Access in Samba Bluewater Resort, Olongapo City",
+              website: "https://www.metrodeal.com/"
             }
           ]
         },
         {
           icon: "statics/destinations/transpo.jpg",
           name: "transpo",
+          active: false,
           lists: [
             {
               image: "statics/destinations/transpo-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Travel Conveniently with a 24-Hour Rental of Sedan in Automatic Transmission with Juzzr Car Rental",
+              website: "https://www.metrodeal.com/"
             },
             {
               image: "statics/destinations/transpo-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Travel with 12- or 24-Hour Car Rental with Unlimited Mileage in Luzon with Happy Mile Car Rentals",
+              website: "https://www.metrodeal.com/"
             }
           ]
         },
         {
           icon: "statics/destinations/resto.jpg",
           name: "resto",
+          active: false,
           lists: [
             {
               image: "statics/destinations/resto-1.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "P1000 worth of Food & Drinks at any Burgoo American Bar & Restaurant branches",
+              website: "https://www.metrodeal.com/"
             },
             {
               image: "statics/destinations/resto-2.jpg",
-              desc: "Lorem ipsum dolor sir amet consectetuer adiphising init",
-              website: "metrodeal.com"
+              desc:
+                "Indulge in an Eat-All-You-Can Lunch or Dinner Buffet at Midas Hotel in Midas Cafe, Pasay City",
+              website: "https://www.metrodeal.com/"
             }
           ]
         }
@@ -149,17 +155,18 @@ export default {
   },
   computed: {
     filterdDestinations() {
-      let data = null;
-      this.destinations.filter(res => {
-        if (this.tab_active != "all") {
-          if (res.name == this.tab_active) {
-            return true;
-          }
-        } else {
-          return true;
-        }
-      });
-      return this.destinations.lists;
+      return this.destinations.filter(res => res.active);
+    }
+  },
+  methods: {
+    selectActive(ind) {
+      this.destinations.forEach(
+        (dest, index) => (this.destinations[index].active = false)
+      );
+      this.destinations[ind].active = true;
+    },
+    openWebsite(link) {
+      window.open(link, "_blank");
     }
   },
   mounted() {
@@ -179,6 +186,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.hidden {
+  display: none;
+}
 .swiper-container,
 .travel-destination {
   width: 100%;

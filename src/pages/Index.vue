@@ -5,7 +5,9 @@
       <FrequentlyUsedApps></FrequentlyUsedApps>
       <TopFiveApps></TopFiveApps>
       <TravelDestinations></TravelDestinations>
-      <!-- <lorem></lorem> -->
+      <!-- <Shop></Shop> -->
+      <!-- <Games></Games> -->
+      <!-- <Music></Music> -->
     </div>
     <q-page-sticky expand position="top" style="z-index: 10">
       <div
@@ -18,7 +20,12 @@
         "
       >
         <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="(cat, i) in categories" :key="i">
+          <div
+            class="swiper-slide tab-active"
+            v-for="(cat, i) in categories"
+            :key="i"
+            @click="toggleCategories(i, cat)"
+          >
             <div class="categories-tab__item">
               <div class="categories-tab__item-icon">
                 <img width="22" :src="cat.icon" alt="" />
@@ -39,6 +46,9 @@ import Lorem from "../components/Lorem";
 import FrequentlyUsedApps from "../components/FrequentlyUsedApps";
 import TopFiveApps from "../components/TopFiveApps";
 import TravelDestinations from "../components/TravelDestinations";
+import Shop from "../components/Shop";
+import Games from "../components/Games";
+import Music from "../components/Music";
 
 export default {
   name: "PageIndex",
@@ -46,12 +56,15 @@ export default {
     Lorem,
     FrequentlyUsedApps,
     TopFiveApps,
-    TravelDestinations
+    TravelDestinations,
+    Shop,
+    Games,
+    Music
   },
   data() {
     return {
       filled_header: 20,
-      categories_tab: "mail",
+      categories_tab: "travel",
       bg_image: "../statics/get-started.jpg",
       categories: [
         {
@@ -83,6 +96,10 @@ export default {
     },
     openWebsite(website) {
       window.open(website, "_blank");
+    },
+    toggleCategories(name) {
+      this.categories_tab = name;
+      this.categories.name = this.categories_tab;
     }
   },
   mounted() {
@@ -90,6 +107,7 @@ export default {
       slidesPerView: 5
     });
     this.scrolled();
+    this.toggleCategories();
   }
 };
 </script>
@@ -133,6 +151,9 @@ export default {
         align-items: center;
         justify-content: center;
         padding-bottom: 8px;
+      }
+      .tab-active {
+        border-bottom: 1px solid $storya;
       }
     }
 
