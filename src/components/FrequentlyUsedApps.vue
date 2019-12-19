@@ -63,37 +63,37 @@ export default {
       details: {},
       apps: [
         {
-          icon: "statics/fb.svg",
+          icon: "statics/apps/fb.svg",
           name: "facebook",
           add:
             "https://sm.mashable.com/t/mashable_sea/news/k/kfc-to-add/kfc-to-add-fried-chicken-wings-to-its-menu_mtfz.960.png"
         },
         {
-          icon: "statics/messenger.svg",
+          icon: "statics/apps/messenger.svg",
           name: "messenger",
           add:
             "https://the828.sagacom.com/wp-content/blogs.dir/191/files/2018/06/kfc.png"
         },
         {
-          icon: "statics/tiktok.svg",
+          icon: "statics/apps/tiktok.svg",
           name: "tiktok",
           add:
             "https://cdn.phonebooky.com/blog/wp-content/uploads/2019/10/18135103/73153510_2943101579051935_600562575465250816_o.jpg"
         },
         {
-          icon: "statics/grab.svg",
+          icon: "statics/apps/grab.svg",
           name: "grab",
           add:
             "http://tripkoto.salezoneph.com/wp-content/uploads/2019/04/FB_IMG_1555028690880.jpg"
         },
         {
-          icon: "statics/spotify.svg",
+          icon: "statics/apps/spotify.svg",
           name: "spotify",
           add:
             "https://the828.sagacom.com/wp-content/blogs.dir/191/files/2018/06/kfc.png"
         },
         {
-          icon: "statics/ig.svg",
+          icon: "statics/apps/ig.svg",
           name: "instagram",
           add:
             "https://cdn.greatdeals.com.sg/wp-content/uploads/2018/03/02002116/kfc-mozzarella-zinger-burger-march-2018.jpg"
@@ -112,7 +112,8 @@ export default {
   mounted() {
     var mySwiper = new Swiper(".frequently-used-apps", {
       slidesPerView: 6,
-      spaceBetween: 15
+      spaceBetween: 15,
+      slidesOffsetAfter: 30
     });
   }
 };
@@ -120,13 +121,18 @@ export default {
 
 <style lang="scss">
 .frequently-used-apps {
-  padding: 0 14px;
+  width: 100%;
+  overflow: hidden;
   .swiper-wrapper {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
     .swiper-slide {
       .app-icon {
         margin-top: 8px;
         img {
           border-radius: 8px;
+          max-width: 100%;
+          height: auto;
         }
       }
     }

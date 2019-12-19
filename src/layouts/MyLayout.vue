@@ -1,7 +1,15 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <!-- <q-header reveal style="background-color: #202124"> -->
-    <q-header reveal style="background-color: transparent">
+    <q-header
+      reveal
+      v-scroll="scrolled"
+      :style="
+        filled_header >= 20
+          ? 'background-color: #202124'
+          : 'background-color: transparent'
+      "
+    >
       <q-toolbar class="column">
         <button class="app-back">
           <q-icon
@@ -28,7 +36,17 @@ export default {
   name: "MyLayout",
 
   data() {
-    return {};
+    return {
+      filled_header: 20
+    };
+  },
+  methods: {
+    scrolled(position) {
+      this.filled_header = position;
+    }
+  },
+  mounted() {
+    this.scrolled();
   }
 };
 </script>

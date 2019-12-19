@@ -65,30 +65,30 @@ export default {
       details: {},
       apps: [
         {
-          icon: "statics/tripadvisor.svg",
+          icon: "statics/apps/tripadvisor.svg",
           name: "tripadvisor",
           add:
             "https://image.cnbcfm.com/api/v1/image/106008977-156267514025104113-4_tacos_pr_images_cr.jpg?v=1562675184"
         },
         {
-          icon: "statics/expedia.svg",
+          icon: "statics/apps/expedia.svg",
           name: "expedia",
           add:
             "https://assets1.csnews.com/files/styles/content_sm/s3/2018-02/McDonalds%20Happy%20Meal.jpg?itok=1ng0cLST"
         },
         {
-          icon: "statics/pinterest.svg",
+          icon: "statics/apps/pinterest.svg",
           name: "pinterest",
           add:
             "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/news-image/kfc-adds-fried-wings-menus-nationwide.jpg?itok=Z5J5ZZ3q"
         },
         {
-          icon: "statics/grab.svg",
+          icon: "statics/apps/grab.svg",
           name: "grab",
           add: "https://media.graytvinc.com/images/810*450/KFC30.jpg"
         },
         {
-          icon: "statics/spotify.svg",
+          icon: "statics/apps/spotify.svg",
           name: "spotify",
           add:
             "https://cdn.rttnews.com/articleimages/ustopstories/2019/november/popeyeschickensandwich-nov04-lt.jpg"
@@ -107,7 +107,8 @@ export default {
   mounted() {
     var mySwiper = new Swiper(".top-five-apps", {
       slidesPerView: 5,
-      spaceBetween: 15
+      spaceBetween: 15,
+      slidesOffsetAfter: 30
     });
   }
 };
@@ -117,9 +118,8 @@ export default {
 .top-five-apps {
   width: 100%;
   margin-top: 1rem;
-  .section-title {
-    padding: 0 14px;
-  }
+  overflow: hidden;
+
   .swiper-wrapper {
     margin: 0 1rem;
     width: calc(100% - 2rem);
@@ -178,7 +178,7 @@ export default {
     margin: 0 1rem;
     width: calc(100% - 2rem);
     border-radius: 5px;
-    background-color: #f59b20;
+    background-color: $storya;
     line-height: 12px;
     padding: 10px 12px;
     border: 0;

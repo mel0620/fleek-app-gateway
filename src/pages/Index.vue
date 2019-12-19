@@ -8,7 +8,15 @@
       <!-- <lorem></lorem> -->
     </div>
     <q-page-sticky expand position="top" style="z-index: 10">
-      <div class="swiper-container categories-tab">
+      <div
+        v-scroll="scrolled"
+        class="swiper-container categories-tab"
+        :style="
+          filled_header >= 20
+            ? 'background-color: #202124 !important'
+            : 'background-color: transparent'
+        "
+      >
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="(cat, i) in categories" :key="i">
             <div class="categories-tab__item">
@@ -42,6 +50,7 @@ export default {
   },
   data() {
     return {
+      filled_header: 20,
       categories_tab: "mail",
       bg_image: "../statics/get-started.jpg",
       categories: [
@@ -68,10 +77,16 @@ export default {
       ]
     };
   },
+  methods: {
+    scrolled(position) {
+      this.filled_header = position;
+    }
+  },
   mounted() {
     var mySwiper = new Swiper(".swiper-container", {
       slidesPerView: 5
     });
+    this.scrolled();
   }
 };
 </script>
@@ -80,6 +95,7 @@ export default {
 .section-title {
   color: #fff;
   font-size: 12px;
+  padding: 0 14px;
 }
 
 .app-gateway {
@@ -120,7 +136,7 @@ export default {
       text-align: center;
 
       .categories-tab__item-icon {
-        background-color: #f59b20;
+        background-color: $storya;
         border-radius: 100%;
         width: 45px;
         height: 45px;
