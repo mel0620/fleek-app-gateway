@@ -80,6 +80,9 @@ export default {
   methods: {
     scrolled(position) {
       this.filled_header = position;
+    },
+    openWebsite(website) {
+      window.open(website, "_blank");
     }
   },
   mounted() {

@@ -83,8 +83,8 @@ export default {
             "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/news-image/kfc-adds-fried-wings-menus-nationwide.jpg?itok=Z5J5ZZ3q"
         },
         {
-          icon: "statics/apps/grab.svg",
-          name: "grab",
+          icon: "statics/apps/viber.svg",
+          name: "viber",
           add: "https://media.graytvinc.com/images/810*450/KFC30.jpg"
         },
         {
