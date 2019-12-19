@@ -41,9 +41,9 @@
           <div class="add-space">
             <img :src="details.add" :alt="details.add" />
           </div>
-          <button class="btn-app-continue">
+          <button v-ripple class="btn-app-continue">
             <div>CONTINUE TO {{ details.name }}</div>
-            <div>and receive 10 Points</div>
+            <div class="points">and receive 10 Points</div>
           </button>
         </div>
       </q-card>

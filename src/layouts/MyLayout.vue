@@ -1,6 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header reveal style="background-color: #202124">
+    <!-- <q-header reveal style="background-color: #202124"> -->
+    <q-header reveal style="background-color: transparent">
       <q-toolbar class="column">
         <button class="app-back">
           <q-icon
@@ -77,17 +78,17 @@ export default {
 
 .app-gateway-container {
   position: relative;
-  //   background-color: #111010;
+  background-color: #111010;
 
-  //   &::before {
-  //     content: " ";
-  //     background: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.4));
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     z-index: 2;
-  //   }
+  &::before {
+    content: " ";
+    background: linear-gradient(rgba(#000, 0.4), rgba(#000, 0.4));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
 }
 </style>

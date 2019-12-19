@@ -43,9 +43,9 @@
           <div class="add-space">
             <img :src="details.add" :alt="details.add" />
           </div>
-          <button class="btn-app-continue">
+          <button v-ripple class="btn-app-continue">
             <div>CONTINUE TO {{ details.name }}</div>
-            <div>and receive 10 Points</div>
+            <div class="points">and receive 10 Points</div>
           </button>
         </div>
       </q-card>
@@ -115,14 +115,21 @@ export default {
 
 <style lang="scss">
 .top-five-apps {
+  width: 100%;
   margin-top: 1rem;
-  padding: 0 14px;
+  .section-title {
+    padding: 0 14px;
+  }
   .swiper-wrapper {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
     .swiper-slide {
       .app-icon {
         margin-top: 8px;
         img {
           border-radius: 8px;
+          max-width: 100%;
+          height: auto;
         }
       }
     }
@@ -175,6 +182,8 @@ export default {
     line-height: 12px;
     padding: 10px 12px;
     border: 0;
+    outline: none;
+    position: relative;
 
     div:first-child {
       text-transform: uppercase;
@@ -182,7 +191,7 @@ export default {
       font-size: 0.875rem;
     }
 
-    div:last-child {
+    div.points {
       color: white;
       font-size: 0.75rem;
       opacity: 0.6;

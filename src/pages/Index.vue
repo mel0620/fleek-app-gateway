@@ -1,6 +1,6 @@
 <template>
-  <!-- <q-page class="app-gateway" :style="`--background: url('${bg_image}')`"> -->
-  <q-page class="app-gateway">
+  <q-page class="app-gateway" :style="`--background: url('${bg_image}')`">
+    <!-- <q-page class="app-gateway"> -->
     <div class="app-gateway__content">
       <FrequentlyUsedApps></FrequentlyUsedApps>
       <TopFiveApps></TopFiveApps>
@@ -85,7 +85,7 @@ export default {
 .app-gateway {
   position: relative;
   --background: #fff;
-  background-color: #202124;
+  // background-color: #202124;
 
   &::after {
     content: " ";
@@ -105,7 +105,7 @@ export default {
     width: 100%;
     padding-top: 1rem;
     border-bottom: 1px solid rgba(#fff, 0.1);
-    background-color: #202124;
+    // background-color: #202124;
 
     .swiper-wrapper {
       .swiper-slide {

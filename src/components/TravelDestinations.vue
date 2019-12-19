@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-container travel-destination">
+  <div class="travel-destination">
     <div class="section-title">TRAVEL DESTINATIONS</div>
     <div class="swiper-wrapper">
       <div class="swiper-slide" v-for="(dest, i) in destinations" :key="i">
@@ -23,23 +23,23 @@ export default {
     return {
       destinations: [
         {
-          icon: "statics/tripadvisor.svg",
+          icon: "statics/all.jpg",
           name: "all"
         },
         {
-          icon: "statics/expedia.svg",
+          icon: "statics/hotel.jpg",
           name: "hotels"
         },
         {
-          icon: "statics/pinterest.svg",
+          icon: "statics/resort.jpg",
           name: "Resorts"
         },
         {
-          icon: "statics/grab.svg",
+          icon: "statics/transpo.jpg",
           name: "transpo"
         },
         {
-          icon: "statics/spotify.svg",
+          icon: "statics/resto.jpg",
           name: "resto"
         }
       ]
@@ -47,28 +47,32 @@ export default {
   },
   mounted() {
     var mySwiper = new Swiper(".travel-destination", {
-      slidesPerView: 5
+      slidesPerView: 5,
+      spaceBetween: 15
     });
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.swiper-container {
+.swiper-container,
+.travel-destination {
   width: 100%;
   padding-top: 1rem;
   border-bottom: 1px solid rgba(#fff, 0.1);
-  background-color: #202124;
+  // background-color: #202124;
 
   .section-title {
     padding: 0 14px;
   }
 
   .swiper-wrapper {
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
     .swiper-slide {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
       padding-bottom: 8px;
     }
   }
@@ -90,7 +94,6 @@ export default {
       color: #fff;
       font-size: 0.75rem;
       text-align: center;
-      width: 45px;
       margin-top: 4px;
     }
   }
