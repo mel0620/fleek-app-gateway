@@ -21,7 +21,7 @@
       transition-hide="fade"
       v-model="dialog"
     >
-      <q-card style="background-color: #202124">
+      <q-card class="q-pb-lg" style="background-color: #202124">
         <button
           class="app-back"
           style="margin-left: 12px"

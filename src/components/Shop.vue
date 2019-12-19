@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="shop">
+    <div class="gateway-category-tab">
       <div class="section-title">SHOP</div>
       <div class="swiper-wrapper">
         <div
@@ -10,29 +10,31 @@
           :key="i"
           @click="selectActive(i)"
         >
-          <div class="shop__item">
-            <div class="shop__item-icon">
+          <div class="sub-category">
+            <div class="sub-category__icon">
               <img :src="dest.icon" alt="" />
             </div>
-            <div class="shop__item-name">{{ dest.name }}</div>
+            <div class="sub-category__name">{{ dest.name }}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="shop-panel">
-      <div class="shop-wrapper">
-        <div class="shop-item" v-for="(dest, index) in filterShop" :key="index">
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, ind) in dest.lists"
-              :key="ind"
-              @click="openWebsite(item.website)"
-            >
-              <img :src="item.image" alt="" />
-              <div class="desc">{{ item.desc }}</div>
-              <div class="website">{{ item.website }}</div>
-            </div>
+    <div class="gateway-category-panel">
+      <div
+        class="gateway-category-panel__item"
+        v-for="(dest, index) in filterShop"
+        :key="index"
+      >
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            v-for="(item, ind) in dest.lists"
+            :key="ind"
+            @click="openWebsite(item.website)"
+          >
+            <img :src="item.image" alt="" />
+            <div class="desc">{{ item.desc }}</div>
+            <div class="website">{{ item.website }}</div>
           </div>
         </div>
       </div>
@@ -156,13 +158,13 @@ export default {
     }
   },
   mounted() {
-    var mySwiper = new Swiper(".shop", {
+    var mySwiper = new Swiper(".gateway-category-tab", {
       slidesPerView: 5,
       spaceBetween: 15,
       slidesOffsetAfter: 30
     });
 
-    var mySwiper2 = new Swiper(".shop-item", {
+    var mySwiper2 = new Swiper(".gateway-category-panel__item", {
       slidesPerView: 2,
       spaceBetween: 15,
       slidesOffsetAfter: 30
@@ -170,104 +172,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.hidden {
-  display: none;
-}
-.swiper-container,
-.shop {
-  width: 100%;
-  padding-top: 1rem;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(#fff, 0.1);
-  // background-color: #202124;
-
-  .swiper-wrapper {
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
-    .swiper-slide {
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      padding-bottom: 8px;
-    }
-  }
-
-  .shop__item {
-    text-align: center;
-    margin-top: 12px;
-
-    .shop__item-icon {
-      img {
-        border-radius: 8px;
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    .shop__item-name {
-      text-transform: capitalize;
-      color: #fff;
-      font-size: 0.75rem;
-      text-align: center;
-      margin-top: 4px;
-    }
-  }
-
-  .tab-active {
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      box-shadow: 0 0 0 1px $storya;
-    }
-
-    .shop__item-name {
-      color: $storya;
-    }
-  }
-}
-.shop-panel {
-  margin-top: 1rem;
-  padding-bottom: 1.5rem;
-  .shop-wrapper {
-    .shop-item {
-      width: 100%;
-
-      .swiper-wrapper {
-        margin: 0 1rem;
-        width: calc(100% - 2rem);
-
-        .swiper-slide {
-          img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-          }
-
-          .desc {
-            line-height: 14px;
-            color: rgba(#fff, 0.7);
-            font-size: 12px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
-
-          .website {
-            color: #fff;
-            font-size: 10px;
-          }
-        }
-      }
-    }
-  }
-}
-</style>

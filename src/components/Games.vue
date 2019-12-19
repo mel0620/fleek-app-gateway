@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="games">
+    <div class="gateway-category-tab">
       <div class="section-title">GAMES</div>
       <div class="swiper-wrapper">
         <div
@@ -10,33 +10,31 @@
           :key="i"
           @click="selectActive(i)"
         >
-          <div class="games__item">
-            <div class="games__item-icon">
+          <div class="sub-category">
+            <div class="sub-category__icon">
               <img :src="dest.icon" alt="" />
             </div>
-            <div class="games__item-name">{{ dest.name }}</div>
+            <div class="sub-category__name">{{ dest.name }}</div>
           </div>
         </div>
       </div>
     </div>
-    <div class="games-panel">
-      <div class="games-wrapper">
-        <div
-          class="games-item"
-          v-for="(dest, index) in filterGames"
-          :key="index"
-        >
-          <div class="swiper-wrapper">
-            <div
-              class="swiper-slide"
-              v-for="(item, ind) in dest.lists"
-              :key="ind"
-              @click="openWebsite(item.website)"
-            >
-              <img :src="item.image" alt="" />
-              <div class="desc">{{ item.desc }}</div>
-              <div class="website">{{ item.website }}</div>
-            </div>
+    <div class="gateway-category-panel">
+      <div
+        class="gateway-category-panel__item"
+        v-for="(dest, index) in filterGames"
+        :key="index"
+      >
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            v-for="(item, ind) in dest.lists"
+            :key="ind"
+            @click="openWebsite(item.website)"
+          >
+            <img :src="item.image" alt="" />
+            <div class="desc">{{ item.desc }}</div>
+            <div class="website">{{ item.website }}</div>
           </div>
         </div>
       </div>
@@ -62,13 +60,13 @@ export default {
           lists: [
             {
               image: "statics/games/toy1.jpg",
-              desc: "How to Help Your Child Make Friends",
-              website: "https://www.parents.com/"
+              desc: "The 25 Best Adventure Games",
+              website: "https://www.popularmechanics.com/"
             },
             {
-              image: "statics/games/appliances2.jpg",
-              desc: "The 5 Best Affordable Luxury Appliance Brands",
-              website: "https://blog.yaleappliance.com/"
+              image: "statics/games/toy2.jpg",
+              desc: "20 terrifying PC horror games to play with the lights off",
+              website: "https://www.pcworld.com/"
             }
           ]
         },
@@ -158,13 +156,13 @@ export default {
     }
   },
   mounted() {
-    var mySwiper = new Swiper(".games", {
+    var mySwiper = new Swiper(".gateway-category-tab", {
       slidesPerView: 5,
       spaceBetween: 15,
       slidesOffsetAfter: 30
     });
 
-    var mySwiper2 = new Swiper(".games-item", {
+    var mySwiper2 = new Swiper(".gateway-category-panel__item", {
       slidesPerView: 2,
       spaceBetween: 15,
       slidesOffsetAfter: 30
@@ -172,104 +170,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.hidden {
-  display: none;
-}
-.swiper-container,
-.games {
-  width: 100%;
-  padding-top: 1rem;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(#fff, 0.1);
-  // background-color: #202124;
-
-  .swiper-wrapper {
-    margin: 0 1rem;
-    width: calc(100% - 2rem);
-    .swiper-slide {
-      // display: flex;
-      // align-items: center;
-      // justify-content: center;
-      padding-bottom: 8px;
-    }
-  }
-
-  .games__item {
-    text-align: center;
-    margin-top: 12px;
-
-    .games__item-icon {
-      img {
-        border-radius: 8px;
-        max-width: 100%;
-        height: auto;
-      }
-    }
-
-    .games__item-name {
-      text-transform: capitalize;
-      color: #fff;
-      font-size: 0.75rem;
-      text-align: center;
-      margin-top: 4px;
-    }
-  }
-
-  .tab-active {
-    position: relative;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      box-shadow: 0 0 0 1px $storya;
-    }
-
-    .games__item-name {
-      color: $storya;
-    }
-  }
-}
-.games-panel {
-  margin-top: 1rem;
-  padding-bottom: 1.5rem;
-  .games-wrapper {
-    .games-item {
-      width: 100%;
-
-      .swiper-wrapper {
-        margin: 0 1rem;
-        width: calc(100% - 2rem);
-
-        .swiper-slide {
-          img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-          }
-
-          .desc {
-            line-height: 14px;
-            color: rgba(#fff, 0.7);
-            font-size: 12px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-          }
-
-          .website {
-            color: #fff;
-            font-size: 10px;
-          }
-        }
-      }
-    }
-  }
-}
-</style>
