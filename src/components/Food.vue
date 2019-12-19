@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div class="gateway-category-tab">
+    <div class="row items-center justify-center">
+      <div class="text-grey-5 q-mt-lg">Not available</div>
+    </div>
+    <!-- <div class="gateway-category-tab">
       <div class="section-title">Food</div>
       <div class="swiper-wrapper">
         <div
@@ -38,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
