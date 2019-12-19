@@ -80,7 +80,6 @@ export default {
 .section-title {
   color: #fff;
   font-size: 12px;
-  letter-spacing: 1px;
 }
 
 .app-gateway {

@@ -41,6 +41,7 @@ export default {
   align-items: center;
   align-self: flex-start;
   margin-top: 0.5rem;
+  outline: none;
 
   &__label {
     color: white;

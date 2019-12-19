@@ -5,7 +5,7 @@
       <div class="swiper-wrapper">
         <div
           class="swiper-slide"
-          @click="showAppDetails(i)"
+          @click="showAppDetails(i, app)"
           v-for="(app, i) in apps"
           :key="i"
         >
@@ -34,8 +34,19 @@
           ></q-icon>
           <div class="app-back__label">Back</div>
         </button>
-        <div>
-          <!-- <img :src="" alt="" /> -->
+        <div class="app-details">
+          <div class="app-info">
+            <div class="app-info__label">You are opening</div>
+            <img :src="details.icon" alt="" />
+            <div class="app-name">{{ details.name }}</div>
+          </div>
+          <div class="add-space">
+            <img :src="details.add" :alt="details.add" />
+          </div>
+          <button class="btn-app-continue">
+            <div>CONTINUE TO {{ details.name }}</div>
+            <div>and receive 10 Points</div>
+          </button>
         </div>
       </q-card>
     </q-dialog>
@@ -51,34 +62,46 @@ export default {
   data() {
     return {
       dialog: false,
-      details: [],
+      details: {},
       apps: [
         {
           icon: "statics/tripadvisor.svg",
-          name: "tripadvisor"
+          name: "tripadvisor",
+          add:
+            "https://image.cnbcfm.com/api/v1/image/106008977-156267514025104113-4_tacos_pr_images_cr.jpg?v=1562675184"
         },
         {
           icon: "statics/expedia.svg",
-          name: "expedia"
+          name: "expedia",
+          add:
+            "https://assets1.csnews.com/files/styles/content_sm/s3/2018-02/McDonalds%20Happy%20Meal.jpg?itok=1ng0cLST"
         },
         {
           icon: "statics/pinterest.svg",
-          name: "pinterest"
+          name: "pinterest",
+          add:
+            "https://www.qsrmagazine.com/sites/default/files/styles/story_page/public/news-image/kfc-adds-fried-wings-menus-nationwide.jpg?itok=Z5J5ZZ3q"
         },
         {
           icon: "statics/grab.svg",
-          name: "grab"
+          name: "grab",
+          add: "https://media.graytvinc.com/images/810*450/KFC30.jpg"
         },
         {
           icon: "statics/spotify.svg",
-          name: "spotify"
+          name: "spotify",
+          add:
+            "https://cdn.rttnews.com/articleimages/ustopstories/2019/november/popeyeschickensandwich-nov04-lt.jpg"
         }
       ]
     };
   },
   methods: {
-    showAppDetails(id) {
+    showAppDetails(id, app) {
       this.dialog = true;
+      this.details.icon = app.icon;
+      this.details.name = app.name;
+      this.details.add = app.add;
     }
   },
   mounted() {
@@ -102,6 +125,67 @@ export default {
           border-radius: 8px;
         }
       }
+    }
+  }
+}
+
+.app-details {
+  .app-info {
+    text-align: center;
+    margin: 1rem;
+
+    &__label {
+      color: white;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      width: 50px;
+      margin-top: 1rem;
+      border-radius: 5px;
+    }
+
+    .app-name {
+      text-transform: capitalize;
+      color: white;
+    }
+  }
+  .add-space {
+    margin: 1.5rem 1rem;
+    // border: 2px solid rgba(#fff, 0.1);
+    width: calc(100% - 2rem);
+    height: 50%;
+    display: flex;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+      object-fit: contain;
+    }
+  }
+  .btn-app-continue {
+    text-align: center;
+    margin: 0 1rem;
+    width: calc(100% - 2rem);
+    border-radius: 5px;
+    background-color: #f59b20;
+    line-height: 12px;
+    padding: 10px 12px;
+    border: 0;
+
+    div:first-child {
+      text-transform: uppercase;
+      color: white;
+      font-size: 0.875rem;
+    }
+
+    div:last-child {
+      color: white;
+      font-size: 0.75rem;
+      opacity: 0.6;
     }
   }
 }
