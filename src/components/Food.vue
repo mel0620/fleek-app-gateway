@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="gateway-category-tab">
-      <div class="section-title">MUSIC</div>
+      <div class="section-title">Food</div>
       <div class="swiper-wrapper">
         <div
           class="swiper-slide"
           :class="dest.active ? 'tab-active' : ''"
-          v-for="(dest, i) in music"
+          v-for="(dest, i) in destinations"
           :key="i"
           @click="selectActive(i)"
         >
@@ -21,8 +21,8 @@
     </div>
     <div class="gateway-category-panel">
       <div
-        class="gateway-category-panel__item"
-        v-for="(dest, index) in filterMusic"
+        class="gateway-category-panel__item "
+        v-for="(dest, index) in filterdDestinations"
         :key="index"
       >
         <div class="swiper-wrapper">
@@ -52,89 +52,89 @@ export default {
   },
   data() {
     return {
-      music: [
+      destinations: [
         {
-          icon: "statics/music/music-all.jpg",
+          icon: "",
           name: "all",
           active: true,
           lists: [
             {
               image: "",
-              desc: "50 Best Love Songs to Add to Your Romance Playlist",
-              website: "https://www.oprahmag.com/"
+              desc: "",
+              website: ""
             },
             {
               image: "",
-              desc: "The 40 Love Songs You Need to Close a Date",
-              website: "https://www.esquire.com/"
+              desc: "",
+              website: ""
             }
           ]
         },
         {
-          icon: "statics/music/music-love.jpg",
-          name: "love",
+          icon: "",
+          name: "desserts",
           active: false,
           lists: [
             {
               image: "",
-              desc: "50 Best Love Songs to Add to Your Romance Playlist",
-              website: "https://www.oprahmag.com/"
+              desc: "",
+              website: ""
             },
             {
               image: "",
-              desc: "The 40 Love Songs You Need to Close a Date",
-              website: "https://www.esquire.com/"
+              desc: "",
+              website: ""
             }
           ]
         },
         {
-          icon: "statics/music/music-Rock.jpg",
-          name: "Rock",
+          icon: "",
+          name: "meat",
           active: false,
           lists: [
             {
               image: "",
-              desc: "150 Greatest Rock Songs of the 2000s",
-              website: "https://rateyourmusic.com/"
+              desc: "",
+              website: ""
             },
             {
               image: "",
-              desc: "The 100 most popular rock bands of all time ",
-              website: "https://www.businessinsider.com/"
+              desc: "",
+              website: ""
             }
           ]
         },
         {
-          icon: "statics/music/music-pop.jpg",
-          name: "pop",
+          icon: "",
+          name: "bread",
           active: false,
           lists: [
             {
               image: "",
-              desc: "The 35 Best-Selling Pop Albums in American History",
-              website: "https://www.mentalfloss.com/"
+              desc: "",
+              website: ""
             },
             {
               image: "",
-              desc: "The Best Female Pop Singers Of 2019",
-              website: "https://www.ranker.com/"
+              desc: "",
+              website: ""
             }
           ]
         },
         {
-          icon: "statics/music/music-metal.jpg",
-          name: "metal",
+          icon: "",
+          name: "tasty",
           active: false,
           lists: [
             {
               image: "",
-              desc: "THE 25 MOST IMPORTANT METAL BANDS OF THE ’90S",
-              website: "https://www.metalsucks.net/"
+              desc: "",
+              website: ""
             },
             {
               image: "",
-              desc: "The 100 best metal songs of the 90s",
-              website: "https://www.metalsucks.net/"
+              desc: "",
+              website: ""
             }
           ]
         }
@@ -142,14 +142,16 @@ export default {
     };
   },
   computed: {
-    filterMusic() {
-      return this.music.filter(res => res.active);
+    filterdDestinations() {
+      return this.destinations.filter(res => res.active);
     }
   },
   methods: {
     selectActive(ind) {
-      this.music.forEach((dest, index) => (this.music[index].active = false));
-      this.music[ind].active = true;
+      this.destinations.forEach(
+        (dest, index) => (this.destinations[index].active = false)
+      );
+      this.destinations[ind].active = true;
     },
     openWebsite(link) {
       window.open(link, "_blank");
@@ -162,7 +164,7 @@ export default {
       slidesOffsetAfter: 30
     });
 
-    var mySwiper2 = new Swiper(".gateway-category-panel__item", {
+    var mySwiper2 = new Swiper(".gateway-category-panel__item ", {
       slidesPerView: 2,
       spaceBetween: 15,
       slidesOffsetAfter: 30

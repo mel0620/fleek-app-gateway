@@ -59,12 +59,12 @@ export default {
           active: true,
           lists: [
             {
-              image: "statics/games/toy1.jpg",
+              image: "statics/games/01.jpg",
               desc: "The 25 Best Adventure Games",
               website: "https://www.popularmechanics.com/"
             },
             {
-              image: "statics/games/toy2.jpg",
+              image: "statics/games/02.jpg",
               desc: "20 terrifying PC horror games to play with the lights off",
               website: "https://www.pcworld.com/"
             }
@@ -76,12 +76,12 @@ export default {
           active: false,
           lists: [
             {
-              image: "statics/games/toy1.jpg",
+              image: "statics/games/01.jpg",
               desc: "The 25 Best Adventure Games",
               website: "https://www.popularmechanics.com/"
             },
             {
-              image: "statics/games/toy2.jpg",
+              image: "statics/games/02.jpg",
               desc: "20 terrifying PC horror games to play with the lights off",
               website: "https://www.pcworld.com/"
             }
@@ -93,12 +93,12 @@ export default {
           active: false,
           lists: [
             {
-              image: "statics/games/appliances1.jpg",
+              image: "statics/games/03.jpg",
               desc: "10 Top Educational Apps For Kids",
               website: "https://elearningindustry.com/"
             },
             {
-              image: "statics/games/appliances2.jpg",
+              image: "statics/games/04.jpg",
               desc: "Best Apps for Kids Age 5–8",
               website: "https://www.commonsensemedia.org/"
             }
@@ -110,12 +110,12 @@ export default {
           active: false,
           lists: [
             {
-              image: "statics/games/electronics1.jpg",
+              image: "statics/games/05.jpg",
               desc: "12 Horrifyingly Violent Video Games",
               website: "https://www.rollingstone.com/"
             },
             {
-              image: "statics/games/electronics2.jpg",
+              image: "statics/games/06.jpg",
               desc: "Top 100 Extreme Game sites",
               website: "http://www.xtremetop100.com/"
             }
@@ -127,12 +127,12 @@ export default {
           active: false,
           lists: [
             {
-              image: "statics/games/gadget1.jpg",
+              image: "statics/games/07.jpg",
               desc: "The most watched esports events of November 2019",
               website: "https://esportsinsider.com/"
             },
             {
-              image: "statics/games/gadget2.jpg",
+              image: "statics/games/08.jpg",
               desc: "Dota 2 update brings back strict solo matchmaking",
               website: "https://dotesports.com/"
             }

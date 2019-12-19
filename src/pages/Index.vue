@@ -10,6 +10,7 @@
       <Shop v-if="categories_tab == 'shop'"></Shop>
       <Games v-if="categories_tab == 'games'"></Games>
       <Music v-if="categories_tab == 'music'"></Music>
+      <Food v-if="categories_tab == 'food'"></Food>
     </div>
     <q-page-sticky expand position="top" style="z-index: 10">
       <div
@@ -52,6 +53,7 @@ import TravelDestinations from "../components/TravelDestinations";
 import Shop from "../components/Shop";
 import Games from "../components/Games";
 import Music from "../components/Music";
+import Food from "../components/Food";
 
 export default {
   name: "PageIndex",
@@ -62,7 +64,8 @@ export default {
     TravelDestinations,
     Shop,
     Games,
-    Music
+    Music,
+    Food
   },
   data() {
     return {
