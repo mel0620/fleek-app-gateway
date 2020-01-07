@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="row items-center justify-center">
+    <!-- <div class="row items-center justify-center">
       <div class="text-grey-5 q-mt-lg">Not available</div>
-    </div>
-    <!-- <div class="gateway-category-tab">
+    </div> -->
+    <div class="gateway-category-tab">
       <div class="section-title">Food</div>
       <div class="swiper-wrapper">
         <div
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -57,7 +57,7 @@ export default {
     return {
       destinations: [
         {
-          icon: "",
+          icon: "statics/food/food-all.jpg",
           name: "all",
           active: true,
           lists: [
@@ -74,41 +74,7 @@ export default {
           ]
         },
         {
-          icon: "",
-          name: "desserts",
-          active: false,
-          lists: [
-            {
-              image: "",
-              desc: "",
-              website: ""
-            },
-            {
-              image: "",
-              desc: "",
-              website: ""
-            }
-          ]
-        },
-        {
-          icon: "",
-          name: "meat",
-          active: false,
-          lists: [
-            {
-              image: "",
-              desc: "",
-              website: ""
-            },
-            {
-              image: "",
-              desc: "",
-              website: ""
-            }
-          ]
-        },
-        {
-          icon: "",
+          icon: "statics/food/food-bread.jpg",
           name: "bread",
           active: false,
           lists: [
@@ -125,8 +91,42 @@ export default {
           ]
         },
         {
-          icon: "",
-          name: "tasty",
+          icon: "statics/food/food-buffet.jpg",
+          name: "buffet",
+          active: false,
+          lists: [
+            {
+              image: "",
+              desc: "",
+              website: ""
+            },
+            {
+              image: "",
+              desc: "",
+              website: ""
+            }
+          ]
+        },
+        {
+          icon: "statics/food/food-desserts.jpg",
+          name: "desserts",
+          active: false,
+          lists: [
+            {
+              image: "",
+              desc: "",
+              website: ""
+            },
+            {
+              image: "",
+              desc: "",
+              website: ""
+            }
+          ]
+        },
+        {
+          icon: "statics/food/food-pasta.jpg",
+          name: "pasta",
           active: false,
           lists: [
             {
