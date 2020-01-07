@@ -62,14 +62,14 @@ export default {
           active: true,
           lists: [
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-buffet-1.jpg",
+              desc: "23 of the Most Sulit Buffets in Manila",
+              website: "https://ph.phonebooky.com/"
             },
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-dessert-2.jpg",
+              desc: "THESE ARE THE 7 OF THE WEIRDEST DESSERTS FOUND ANYWHERE IN THE WORLD",
+              website: "http://twistedfood.co.uk/"
             }
           ]
         },
@@ -79,14 +79,14 @@ export default {
           active: false,
           lists: [
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-bread-1.jpg",
+              desc: "The Best 10 Patisserie/Cake Shop in Manila",
+              website: "https://en.yelp.com.ph/"
             },
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-bread-2.jpg",
+              desc: "Dr Bergs Healthiest Bread In The World Recipe",
+              website: "https://thewhoot.com/"
             }
           ]
         },
@@ -96,14 +96,14 @@ export default {
           active: false,
           lists: [
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-buffet-1.jpg",
+              desc: "23 of the Most Sulit Buffets in Manila",
+              website: "https://ph.phonebooky.com/"
             },
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-buffet-2.jpg",
+              desc: "2019 Buffet List: Top 18 Affordable Eat-All-You-Can Restaurants In Metro Manila",
+              website: "https://www.ecomparemo.com/"
             }
           ]
         },
@@ -113,14 +113,14 @@ export default {
           active: false,
           lists: [
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-dessert-1.jpg",
+              desc: "5 Desserts To Make Based On Your Mood",
+              website: "https://spoonuniversity.com/"
             },
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-dessert-2.jpg",
+              desc: "THESE ARE THE 7 OF THE WEIRDEST DESSERTS FOUND ANYWHERE IN THE WORLD",
+              website: "http://twistedfood.co.uk/"
             }
           ]
         },
@@ -130,14 +130,14 @@ export default {
           active: false,
           lists: [
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-pasta-1.jpg",
+              desc: "Italy's best traditional pasta dishes.",
+              website: "https://www.greatitalianchefs.com/"
             },
             {
-              image: "",
-              desc: "",
-              website: ""
+              image: "statics/food/food-pasta-2.jpg",
+              desc: "5 Easy Pasta Dishes That Will Impress Your Friends and Family",
+              website: "https://www.yummy.ph/"
             }
           ]
         }
