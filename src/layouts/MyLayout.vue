@@ -71,8 +71,9 @@ export default {
 
 .app-gateway-search {
     position: relative;
-    display: block;
+    display: flex;
     margin-top: 1rem;
+    width: 100%;
 
     .q-icon {
         position: absolute;
@@ -86,7 +87,7 @@ export default {
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 50px;
         border: 0;
-        min-width: 300px;
+        width: 100%;
         padding: 8px 16px 8px 30px;
         outline: none;
         color: white;
