@@ -52,6 +52,17 @@ export default {
 </script>
 
 <style lang="scss">
+
+.swiper-preloader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -21px;
+    margin-top: -21px;
+    z-index: 10;
+    transform-origin: 50%;
+}
+
 .app-back {
     background-color: transparent;
     border: 0;
