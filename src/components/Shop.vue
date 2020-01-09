@@ -64,9 +64,10 @@ export default {
               website: "https://www.parents.com/"
             },
             {
-              image: "statics/shop/appliances2.jpg",
-              desc: "The 5 Best Affordable Luxury Appliance Brands",
-              website: "https://blog.yaleappliance.com/"
+            image: "statics/shop/electronics2.jpg",
+              desc:
+                "Zuken unveils high-speed features for Internet-connected PCB design",
+              website: "http://www.newelectronics.co.uk/"
             }
           ]
         },

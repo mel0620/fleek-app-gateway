@@ -59,14 +59,14 @@ export default {
           active: true,
           lists: [
             {
-              image: "statics/games/01.jpg",
-              desc: "The 25 Best Adventure Games",
-              website: "https://www.popularmechanics.com/"
+              image: "statics/games/07.jpg",
+              desc: "The most watched esports events of November 2019",
+              website: "https://esportsinsider.com/"
             },
             {
-              image: "statics/games/02.jpg",
-              desc: "20 terrifying PC horror games to play with the lights off",
-              website: "https://www.pcworld.com/"
+              image: "statics/games/04.jpg",
+              desc: "Best Apps for Kids Age 5–8",
+              website: "https://www.commonsensemedia.org/"
             }
           ]
         },

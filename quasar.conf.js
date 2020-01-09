@@ -63,7 +63,8 @@ module.exports = function (ctx) {
         'QRouteTab',
         'QDialog',
         'QCard',
-        'QCardSection'
+        'QCardSection',
+        'QSpinner'
       ],
 
       directives: [
