@@ -49,17 +49,17 @@
 import Swiper from "swiper";
 import "swiper/css/swiper.min.css";
 
-import FrequentlyUsedApps from "../components/FrequentlyUsedApps";
-import TopFiveApps from "../components/TopFiveApps";
-import TravelDestinations from "../components/TravelDestinations";
-const Shop 				= () => import(/*webpackChunkname: 'shop'*/ "../components/Shop");
-const ShpTopFiveApps 	= () => import(/*webpackChunkname: 'shop-top-five'*/ "../components/ShpTopFiveApps");
-const Games 			= () => import(/*webpackChunkname: 'games'*/ "../components/Games");
-const GamesTopFiveApps 	= () => import(/*webpackChunkname: 'games-top-five'*/ "../components/GamesTopFiveApps");
-const Music 			= () => import(/*webpackChunkname: 'music'*/ "../components/Music");
-const MusicTopFiveApps 	= () => import(/*webpackChunkname: 'music-top-five'*/ "../components/MusicTopFiveApps");
-const Food 				= () => import(/*webpackChunkname: 'food'*/ "../components/Food");
-const FoodTopFiveApps 	= () => import(/*webpackChunkname: 'food-top-five'*/ "../components/FoodTopFiveApps");
+import FrequentlyUsedApps from "../components/FrequentlyUsedApps"
+import TopFiveApps from "../components/TopFiveApps"
+import TravelDestinations from "../components/TravelDestinations"
+import Shop from "../components/Shop"
+import ShpTopFiveApps from "../components/ShpTopFiveApps"
+import Games from "../components/Games"
+import GamesTopFiveApps from "../components/GamesTopFiveApps"
+import Music from "../components/Music"
+import MusicTopFiveApps from "../components/MusicTopFiveApps"
+import Food from "../components/Food"
+import FoodTopFiveApps from "../components/FoodTopFiveApps"
 
 export default {
 	name: "PageIndex",
