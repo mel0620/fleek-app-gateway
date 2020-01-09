@@ -9,8 +9,9 @@
         @click="showAppDetails(i, app)"
       >
         <div class="app-icon">
-          <img :src="app.icon" :alt="app.name" />
+          <img class="swiper-lazy" :data-src="app.icon"  />
         </div>
+        <q-spinner size="2em" color="white" class="swiper-preloader"></q-spinner>
       </div>
     </div>
     <q-dialog
@@ -113,7 +114,11 @@ export default {
     var mySwiper = new Swiper(".frequently-used-apps", {
       slidesPerView: 6,
       spaceBetween: 15,
-      slidesOffsetAfter: 30
+      slidesOffsetAfter: 30,
+      preloadImages: false,
+			lazy: {
+				preloaderClass: "swiper-preloader"
+			}
     });
   }
 };

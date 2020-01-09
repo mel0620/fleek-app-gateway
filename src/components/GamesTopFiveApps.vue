@@ -4,9 +4,10 @@
 		<div class="section-title">TOP 5 APPS</div>
 		<div class="swiper-wrapper">
 			<div class="swiper-slide" @click="showAppDetails(i, app)" v-for="(app, i) in apps" :key="i">
-			<div class="app-icon">
-				<img :src="app.icon" :alt="app.name" />
-			</div>
+				<div class="app-icon">
+					<img class="swiper-lazy" :data-src="app.icon"  />
+				</div>
+				<q-spinner size="2em" color="white" class="swiper-preloader"></q-spinner>
 			</div>
 		</div>
 		</div>
@@ -89,7 +90,11 @@ export default {
         var mySwiper = new Swiper(".top-five-apps", {
             slidesPerView: 5,
             spaceBetween: 15,
-            slidesOffsetAfter: 30
+			slidesOffsetAfter: 30,
+			preloadImages: false,
+			lazy: {
+				preloaderClass: "swiper-preloader"
+			}
 		});
 	}
 };

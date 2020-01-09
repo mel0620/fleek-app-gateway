@@ -12,8 +12,9 @@
         >
           <div class="sub-category">
             <div class="sub-category__icon">
-              <img class="swiper-lazy" :src="dest.icon" alt="" />
-              <q-spinner size="3em" color="white" class="swiper-preloader"></q-spinner>
+              <img class="swiper-lazy" :data-src="dest.icon" alt="" />
+              <!-- <div class="swiper-lazy-preloader"></div> -->
+              <q-spinner size="2em" color="white" class="swiper-preloader"></q-spinner>
             </div>
             <div class="sub-category__name">{{ dest.name }}</div>
           </div>
@@ -33,10 +34,11 @@
             :key="ind"
             @click="openWebsite(item.website)"
           >
-            <img class="swiper-lazy" :src="item.image" alt="" />
+            <img class="swiper-lazy" :data-src="item.image" alt="" />
             <div class="desc">{{ item.desc }}</div>
             <div class="website">{{ item.website }}</div>
-            <q-spinner size="3em" color="white" class="swiper-preloader"></q-spinner>
+            <!-- <div class="swiper-lazy-preloader"></div> -->
+            <q-spinner size="2em" color="white" class="swiper-preloader"></q-spinner>
           </div>
         </div>
       </div>
@@ -180,7 +182,7 @@ export default {
       }
     });
 
-    var mySwiper2 = new Swiper(".gateway-category-panel__item ", {
+    var mySwiper2 = new Swiper(".gateway-category-panel__item", {
       slidesPerView: 2,
       spaceBetween: 15,
       slidesOffsetAfter: 30,
