@@ -34,7 +34,7 @@
             :key="ind"
             @click="openWebsite(item.website)"
           >
-            <img class="swiper-lazy" :data-src="item.image" alt="" />
+            <img class="swiper-lazy" :src="item.image" alt="" />
             <div class="desc">{{ item.desc }}</div>
             <div class="website">{{ item.website }}</div>
             <!-- <div class="swiper-lazy-preloader"></div> -->
@@ -152,12 +152,15 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      filter : "all",
     };
   },
   computed: {
     filterdDestinations() {
-      return this.destinations.filter(res => res.active);
+      return this.destinations.filter(res => {
+            if(res.name == this.filter) return true;
+        });
     }
   },
   methods: {
@@ -166,6 +169,7 @@ export default {
         (dest, index) => (this.destinations[index].active = false)
       );
       this.destinations[ind].active = true;
+      this.filter = this.destinations[ind].name
     },
     openWebsite(link) {
       window.open(link, "_blank");
