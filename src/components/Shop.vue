@@ -33,7 +33,7 @@
             :key="ind"
             @click="openWebsite(item.website)"
           >
-            <img class="swiper-lazy" :data-src="item.image" alt="" />
+            <img class="swiper-lazy" :src="item.image" alt="" />
             <div class="desc">{{ item.desc }}</div>
             <div class="website">{{ item.website }}</div>
             <q-spinner size="2em" color="white" class="swiper-preloader"></q-spinner>
