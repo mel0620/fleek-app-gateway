@@ -26,6 +26,7 @@
         </q-toolbar>
         </q-header>
         <q-page-container class="app-gateway-container">
+            <div class="watermark">SAMPLE</div>
             <router-view />
         </q-page-container>
     </q-layout>
@@ -109,6 +110,18 @@ export default {
 .app-gateway-container {
     position: relative;
     background-color: #111010;
+
+    .watermark {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-20deg);
+        font-size: 5rem;
+        font-weight: 700;
+        color: rgba(#fff, .3);
+        z-index: 50;
+        pointer-events: none;
+    }
 
     &::before {
         content: " ";
